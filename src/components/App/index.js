@@ -7,6 +7,7 @@ import Search from '../Search';
 const App = () => {
   return (
     <div className="app">
+      <h1>Muvie</h1>
       <Search />
       <MovieSection />
     </div>

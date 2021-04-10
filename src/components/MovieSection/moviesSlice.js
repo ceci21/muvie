@@ -15,53 +15,49 @@ import example from './example.json';
 // if next page, query stays the same but load in next page. append new movies
 // if query changes, page number is 1 again
 
-const getMovies = async (query) => {
+const getMovies = async (query, page) => {
   console.log(query);
-  // const key = process.env.REACT_APP_API_KEY;
-  // const url = `https://api.themoviedb.org/3/search/movie?api_key=${key}&language=en-US&page=1&include_adult=false&query=${query}`;
-  // const results = await axios.get(url);
-  return example; // returning back query to store for later
-}
+  const key = process.env.REACT_APP_API_KEY;
+  const url = `https://api.themoviedb.org/3/search/movie?api_key=${key}&language=en-US&page=${page}&include_adult=false&query=${query}`;
+  const results = await axios.get(url);
+  return results; // returning back query to store for later
+};
 
 const initialState = {
   results: [],
   status: 'idle',
   query: '',
-  page: 1
+  page: 1, // there needs to be a total pages for a query
+  totalPages: 1,
 };
 
 export const getMoviesAsync = createAsyncThunk(
   'movies/getMovies',
-  async (query) => {
-    const response = await getMovies(query);
-    // console.log(response);
+  async ({ query, page = 1 }) => {
+    const response = await getMovies(query, page);
+    console.log(response);
     // The value we return becomes the `fulfilled` action payload
-    return { response, query };
+    return {
+      results: response.data.results,
+      page: response.data.page,
+      totalPages: response.data.total_pages,
+      query,
+    };
   }
 );
-
-// export const getNextPageAsync = createAsyncThunk(
-//   'movies/getNextPage',
-//   async (query) => {
-//     const response = await getMovies(query, page);
-//     // console.log(response);
-//     // The value we return becomes the `fulfilled` action payload
-//     return response;
-//   }
-// );
 
 export const moviesSlice = createSlice({
   name: 'movies',
   initialState,
   reducers: {
     setQuery: (state, action) => {
-      console.log(action.payload)
+      console.log(action.payload);
       state.query = action.payload;
     },
     clearMovieResults: (state, action) => {
       state.query = '';
-      state.results = []
-    }
+      state.results = [];
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -69,15 +65,19 @@ export const moviesSlice = createSlice({
         state.status = 'loading';
       })
       .addCase(getMoviesAsync.fulfilled, (state, action) => {
-        const { response, query } = action.payload;
+        const { results, page, totalPages, query } = action.payload;
         state.status = 'idle';
-        state.results = response.results;
-        state.page = response.page;
+        if (page > 1) {
+          state.results = [...state.results, ...results];
+        } else {
+          state.results = results;
+        }
+        state.page = page;
         state.query = query;
+        state.totalPages = totalPages;
       });
   },
 });
-
 
 // export const counterSlice = createSlice({
 //   name: 'counter',
@@ -114,10 +114,7 @@ export const moviesSlice = createSlice({
 // });
 // Throttle.
 
-
 export const { setQuery } = moviesSlice.actions;
-
-
 
 // The function below is called a selector and allows us to select a value from
 // the state. Selectors can also be defined inline where they're used instead of
@@ -125,6 +122,8 @@ export const { setQuery } = moviesSlice.actions;
 export const selectMovies = (state) => state.movies.results;
 export const selectQuery = (state) => state.movies.query;
 export const selectPage = (state) => state.movies.page;
+export const selectTotalPages = (state) => state.movies.totalPages;
+export const selectStatus = (state) => state.movies.status;
 
 // // We can also write thunks by hand, which may contain both sync and async logic.
 // // Here's an example of conditionally dispatching actions based on current state.

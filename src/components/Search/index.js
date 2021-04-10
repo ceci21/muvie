@@ -7,12 +7,15 @@ import {
   selectQuery,
   selectPage,
 } from '../MovieSection/moviesSlice';
+import './Search.scss';
 
-function debounce(func, timeout = 300){
+function debounce(func, timeout = 300) {
   let timer;
   return (...args) => {
     clearTimeout(timer);
-    timer = setTimeout(() => { func.apply(this, args); }, timeout);
+    timer = setTimeout(() => {
+      func.apply(this, args);
+    }, timeout);
   };
 }
 
@@ -24,17 +27,16 @@ const Search = () => {
     debounce((e) => {
       const { value } = e.target;
 
-      dispatch(getMoviesAsync(value));
+      dispatch(getMoviesAsync({ query: value, page: 1 }));
       if (!value) {
         setQuery(value);
       }
     }, 1000)
   );
 
-
   useEffect(() => {
     setTimeout(() => {
-      dispatch(getMoviesAsync('deadpool'));
+      dispatch(getMoviesAsync({ query: 'deadpool', page: 1 }));
     }, 500);
   }, []);
 
@@ -44,14 +46,15 @@ const Search = () => {
 
   return (
     <div className="search">
-      <div class="control">
+      <div className="control">
         <input
-          class="input"
+          className="input"
           type="text"
-          placeholder="Text input"
+          placeholder="Search for your favorite movies"
           onChange={onChangeHandler.current}
         ></input>
       </div>
+      {query && <d>Searching for movies containing "{query}"</d>}
     </div>
   );
 };

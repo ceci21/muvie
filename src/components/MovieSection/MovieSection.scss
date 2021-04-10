@@ -1,22 +1,31 @@
 @import '../../style/_variables.scss';
 
+$shadow: #232324;
+$icon-color: #a9abb3;
+
 .movie-section {
-  border: 2px solid red;
+  padding: 1rem;
+  // color: black;
+  // background-color: #151618;
+  color: #4a4a4a;
 
   .movie-cols {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+    grid-column-gap: 1rem;
+    grid-row-gap: 1rem;
   }
 
   .movie-card {
     display: flex;
     flex-direction: row;
-    padding: $margin-m;
-    margin-bottom: $margin-l;
 
     .movie-img {
+      // display: flex;
+      // align-items: center;
+      background-color: #25282c;
+      background-color: black;
       flex: 1;
-      padding-top: $padding-xs;
 
       img {
         width: auto;
@@ -24,21 +33,25 @@
     }
 
     .movie-details {
-      padding-left: $padding-m;
       text-align: left;
       flex: 2;
 
+      & > * {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        margin-bottom: 1rem;
+
+        &:first-child {
+          margin-top: 1rem;
+        }
+      }
+
       h3.title {
-        margin-bottom: $margin-s;
         font-size: 1.5rem;
       }
 
       .description {
         display: block;
-        margin-bottom: $margin-s;
-        max-height: 4.5rem;
-        overflow: hidden;
-        border: 2px solid red;
       }
 
     }
@@ -46,45 +59,12 @@
 }
 
 
-@media only screen and (max-width: $desktop-sm-max) {
+@media only screen and (min-width: $desktop-sm-min) {
   .movie-section {
+    padding: 2rem;
     .movie-cols {
       grid-template-columns: 1fr 1fr;
-    }
-  }
-}
-
-@media only screen and (max-width: $tablet-max) {
-  .movie-section {
-    .movie-cols {
-      grid-template-columns: 1fr;
-    }
-
-    .movie-card {
-      border: 2px solid blue;
-
-      .movie-img {
-        flex: 1;
-      }
-
-      .movie-details {
-        flex: 2;
-      }
-    }
-  }
-}
-
-
-@media only screen and (max-width: $mobile-lg-max) {
-  .movie-section {
-    padding: $padding-m;
-  }
-}
-
-@media only screen and (max-width: $mobile-sm-max) {
-  .movie-section {
-    .movie-card {
-      flex-direction: column;
+      gap: 2rem;
     }
   }
 }

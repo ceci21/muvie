@@ -1,0 +1,16 @@
+@import '../../style/_variables.scss';
+
+
+.search {
+  .control {
+    padding: 1rem;
+  }
+}
+
+@media only screen and (min-width: $desktop-sm-min) {
+  .search {
+    .control {
+      padding: 2rem;
+    }
+  }
+}
