@@ -31,17 +31,19 @@ const MovieSection = () => {
             rating={vote_average}
           />
         );
-        if (i % 2 === 0) {
-          col_1.push(movieCard);
-        } else {
-          col_2.push(movieCard);
-        }
+        col_1.push(movieCard);
+        // if (i % 2 === 0) {
+        //   col_1.push(movieCard);
+        // } else {
+        //   col_2.push(movieCard);
+        // }
       }
     );
     return (
-      <div className="columns">
-        <div className="column">{col_1}</div>
-        <div className="column">{col_2}</div>
+      <div className="movie-cols">
+        { col_1 }
+        {/* <div className="column">{col_1}</div>
+        <div className="column">{col_2}</div> */}
       </div>
     );
   };

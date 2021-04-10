@@ -3,22 +3,31 @@
 .movie-section {
   border: 2px solid red;
 
+  .movie-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
   .movie-card {
-    border: 2px solid green;
     display: flex;
     flex-direction: row;
     padding: $margin-m;
     margin-bottom: $margin-l;
+
     .movie-img {
       flex: 1;
       padding-top: $padding-xs;
 
       img {
-        height: 16rem;
+        width: auto;
       }
     }
 
     .movie-details {
+      padding-left: $padding-m;
+      text-align: left;
+      flex: 2;
+
       h3.title {
         margin-bottom: $margin-s;
         font-size: 1.5rem;
@@ -27,23 +36,55 @@
       .description {
         display: block;
         margin-bottom: $margin-s;
-        // height: 6rem;
-        // max-height: 6rem;
-        // overflow: hidden;
-        // transition: height 2s, max-height 2s;
-      }
-      .description.expanded {
-        height: fit-content;
-        max-height: fit-content;
+        max-height: 4.5rem;
+        overflow: hidden;
+        border: 2px solid red;
       }
 
-      padding-left: $padding-m;
-      text-align: left;
-      flex: 2;
-      // margin: $margin-m;
-      p {
-        // height: 5rem;
+    }
+  }
+}
+
+
+@media only screen and (max-width: $desktop-sm-max) {
+  .movie-section {
+    .movie-cols {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+
+@media only screen and (max-width: $tablet-max) {
+  .movie-section {
+    .movie-cols {
+      grid-template-columns: 1fr;
+    }
+
+    .movie-card {
+      border: 2px solid blue;
+
+      .movie-img {
+        flex: 1;
       }
+
+      .movie-details {
+        flex: 2;
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-width: $mobile-lg-max) {
+  .movie-section {
+    padding: $padding-m;
+  }
+}
+
+@media only screen and (max-width: $mobile-sm-max) {
+  .movie-section {
+    .movie-card {
+      flex-direction: column;
     }
   }
 }

@@ -1,8 +1,11 @@
 @import 'bulma/sass/utilities/_all.sass';
 
-$desktop-min: 1024px;
-$tablet-min: 768px;
-$phone-min: 320px;
+$desktop-md-max: 1200px;
+$desktop-sm-max: 1024px;
+$tablet-max: 768px;
+$mobile-lg-max: 480px;
+$mobile-sm-max: 320px;
+
 $margin-xs: 0.25rem;
 $margin-s: 0.5rem;
 $margin-m: 1rem;

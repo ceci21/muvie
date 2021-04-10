@@ -15,6 +15,7 @@ const MovieCard = ({ title, description, imgPath, numRatings, rating }) => {
       </div>
       <div className="movie-details">
         <h3 className="title">{title}</h3>
+        <div>year</div>
         <p className="description">
         { description }
           {/* {(!isDescriptionExpanded && description.length > 150) ? (
