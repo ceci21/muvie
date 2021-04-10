@@ -1,0 +1,60 @@
+@import '../../style/_variables.scss';
+
+$shadow: #232324;
+$icon-color: #a9abb3;
+
+.movie-section {
+  color: #fff;
+  margin: $spacing-s;
+  @media only screen and (min-width: $desktop-sm-min) {
+    & {
+      margin: $spacing-m;
+    }
+  }
+
+  &.empty {
+    margin-top: 4rem;
+    img {
+      margin-bottom: $spacing-m;
+      width: 10rem;
+      filter: drop-shadow(0 0.5rem 0.5rem #470024);
+    }
+  }
+
+  .results-msg {
+    color: $color-salt;
+    margin-bottom: $spacing-s;
+    @media only screen and (min-width: $desktop-sm-min) {
+      & {
+        margin-bottom: $spacing-m;
+      }
+    }
+  }
+
+  .bottom-scroll-msg {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+  }
+
+  .movie-cols {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: $spacing-s;
+    grid-row-gap: $spacing-s;
+    @media only screen and (min-width: $desktop-sm-min) {
+      & {
+        gap: $spacing-m;
+      }
+    }
+    @media only screen and (min-width: $desktop-md-min) {
+      & {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media only screen and (min-width: $desktop-xl-min) {
+      & {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+  }
+}

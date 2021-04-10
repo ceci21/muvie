@@ -1,0 +1,106 @@
+@import '../../style/_variables.scss';
+
+.movie-card {
+  @include box-shadow;
+  display: flex;
+  flex-direction: row;
+  border-radius: 30px;
+  background: transparent;
+  border-radius: 0.5rem;
+  transition: height 3s;
+
+  .movie-img {
+    background-color: #000;
+    background: linear-gradient(0deg, #000, $color-shadow);
+    flex: 1;
+    overflow: auto;
+    border-bottom-left-radius: 0.5rem;
+    border-top-left-radius: 0.5rem;
+
+    a {
+      width: auto;
+      img {
+        width: auto;
+      }
+    }
+  }
+
+  .movie-details {
+    text-align: left;
+    flex: 2;
+    background: $color-shadow;
+    border-bottom-right-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    padding: $spacing-s;
+    @media only screen and (min-width: $desktop-sm-min) {
+      & {
+        padding: $spacing-s;
+      }
+    }
+
+    & > * {
+      // This adds a little bit of margin for each child of .movie-details
+      margin-bottom: 0.5rem;
+    }
+
+    .title {
+      font-size: 1.2rem;
+      @media only screen and (min-width: $desktop-sm-min) {
+        & {
+          font-size: 1.5rem;
+        }
+      }
+      a {
+        color: #fff;
+      }
+    }
+
+    .description {
+      display: block;
+      position: relative;
+      height: auto;
+      color: #fff;
+      overflow: hidden;
+      transition: max-height 0.2s ease-out;
+      margin-bottom: 0.2rem;
+      max-height: 2rem;
+      @media only screen and (min-width: $mobile-min) {
+        & {
+          max-height: 4rem;
+        }
+      }
+      @media only screen and (min-width: $tablet-min) {
+        & {
+          max-height: 5rem;
+        }
+      }
+
+
+      &.expanded {
+        max-height: 80rem;
+        transition: max-height 0.5s ease-in;
+        background-image: none;
+        .fade-overlay {
+          background-image: none;
+        }
+      }
+    }
+
+    .ratings {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      .star-rating {
+        font-size: 1.2rem;
+      }
+      .ratings-count {
+        margin-left: 1.2rem;
+      }
+    }
+
+    a.read-more-link {
+      display: block;
+      margin-bottom: 1rem;
+    }
+  }
+}

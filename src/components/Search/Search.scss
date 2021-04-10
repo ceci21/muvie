@@ -1,0 +1,43 @@
+@import '../../style/_variables.scss';
+
+.search {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+
+  @media only screen and (min-width: $desktop-sm-min) {
+    & {
+      margin-left: 2rem;
+      margin-right: 2rem;
+      margin-bottom: 2rem;
+    }
+  }
+  .control {
+    margin-bottom: 1rem;
+    input {
+      background-color: #25282c;
+      color: white;
+      box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.6),
+        0 0px 0 1px
+          rgba(10, 10, 10, 0.2);
+      border: 1px;
+      &::placeholder {
+        color: $color-salt;
+      }
+    }
+  }
+
+  .input-container {
+    display: flex;
+    align-items: center;
+  }
+
+  i.fas.fa-search {
+    position: absolute;
+    right: 1rem;
+  }
+
+  .top-msg {
+    text-align: center;
+  }
+}

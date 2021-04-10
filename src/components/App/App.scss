@@ -1,0 +1,268 @@
+// @import '../../style/_variables.scss';
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@import '../../style/index.scss';
+
+.app {
+  margin: auto;
+  padding-top: 2rem;
+  text-align: center;
+
+  @media only screen and (min-width: $desktop-xl-min) {
+    & {
+      max-width: 1600px;
+      margin: auto;
+    }
+  }
+
+  .titles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin: 0 1rem 1rem 1rem;
+    @media only screen and (min-width: $desktop-sm-min) {
+      & {
+        margin: 0 2rem 2rem 2rem;
+      }
+    }
+    @media only screen and (min-width: 550px) {
+      & {
+        flex-direction: row;
+        align-items: baseline;
+      }
+    }
+  }
+
+  h1.muvie-title {
+    display: block;
+    color: #fff;
+    line-height: 0.8em;
+    text-align: left;
+    font-family: 'Fredoka One',
+      sans-serif;
+    font-size: 4rem;
+    margin: 0 0.5rem;
+    animation-name: lavalamp;
+    animation-duration: 3s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: 1;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+  }
+
+  h2.muvie-subtitle {
+    display: block;
+    margin-top: 0.5rem;
+    text-align: left;
+    font-weight: 200;
+    font-size: 2rem;
+    animation-name: textshadow-mobile;
+    @media only screen and (min-width: 550px) {
+      & {
+        animation-name: textshadow-desktop;
+      }
+    }
+    animation-duration: 0.2s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: 1;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+    text-shadow: 0px 0px black;
+  }
+}
+
+@keyframes textshadow-mobile {
+  0% {
+    text-shadow: 0px 0px black;
+  }
+  100% {
+    text-shadow: 0px 2px black;
+  }
+}
+
+@keyframes textshadow-desktop {
+  0% {
+    text-shadow: 2px 0px black;
+  }
+  100% {
+    text-shadow: 2px 0px black;
+  }
+}
+
+@keyframes lavalamp {
+  // TODO: Make this using a @for
+  0% {
+    text-shadow: 0rem 0rem #ffcc29,
+      0rem 0rem #fd3a69,
+      0rem 0rem #9d0191,
+      0rem 0rem #ffcc29,
+      0rem 0rem #fd3a69,
+      0rem 0rem #9d0191,
+      0rem 0rem #ffcc29,
+      0rem 0rem #fd3a69,
+      0rem 0rem #9d0191,
+      0rem 0rem #ffcc29,
+      0rem 0rem #fd3a69,
+      0rem 0rem #9d0191,
+      0 0 0rem #ffffff;
+  }
+
+  10% {
+    text-shadow: 0rem 0rem #ffcc29,
+      0rem 0rem #fd3a69,
+      0rem 0rem #9d0191,
+      0rem 0rem #ffcc29,
+      0rem 0rem #fd3a69,
+      0rem 0rem #9d0191,
+      0rem 0rem #ffcc29,
+      0rem 0rem #fd3a69,
+      0rem 0rem #9d0191,
+      0rem 0.25rem #ffcc29,
+      0rem 0.5rem #fd3a69,
+      0rem 0.75rem #9d0191,
+      0 0 10rem #ffffff;
+  }
+
+  20% {
+    text-shadow: 0rem 0rem #ffcc29,
+      0rem 0rem #fd3a69,
+      0rem 0rem #9d0191,
+      0rem 0rem #ffcc29,
+      0rem 0rem #fd3a69,
+      0rem 0rem #9d0191,
+      0rem 0rem #ffcc29,
+      0rem 0rem #fd3a69,
+      0rem 0.25rem #9d0191,
+      0rem 0.5rem #ffcc29,
+      0rem 0.75rem #fd3a69,
+      0rem 0.75rem #9d0191,
+      0 0 10rem #ffffff;
+  }
+
+  30% {
+    text-shadow: 0rem 0rem #ffcc29,
+      0rem 0rem #fd3a69,
+      0rem 0rem #9d0191,
+      0rem 0rem #ffcc29,
+      0rem 0rem #fd3a69,
+      0rem 0rem #9d0191,
+      0rem 0rem #ffcc29,
+      0rem 0.25rem #fd3a69,
+      0rem 0.5rem #9d0191,
+      0rem 0.75rem #ffcc29,
+      0rem 0.75rem #fd3a69,
+      0rem 0.75rem #9d0191,
+      0 0 10rem #ffffff;
+  }
+  40% {
+    text-shadow: 0rem 0rem #ffcc29,
+      0rem 0rem #fd3a69,
+      0rem 0rem #9d0191,
+      0rem 0rem #ffcc29,
+      0rem 0rem #fd3a69,
+      0rem 0rem #9d0191,
+      0rem 0.25rem #ffcc29,
+      0rem 0.5rem #fd3a69,
+      0rem 0.75rem #9d0191,
+      0rem 0.75rem #ffcc29,
+      0rem 0.75rem #fd3a69,
+      0rem 0.75rem #9d0191,
+      0 0 10rem #ffffff;
+  }
+
+  50% {
+    text-shadow: 0rem 0rem #ffcc29,
+      0rem 0rem #fd3a69,
+      0rem 0rem #9d0191,
+      0rem 0rem #ffcc29,
+      0rem 0rem #fd3a69,
+      0rem 0.25rem #9d0191,
+      0rem 0.5rem #ffcc29,
+      0rem 0.75rem #fd3a69,
+      0rem 0.75rem #9d0191,
+      0rem 0.75rem #ffcc29,
+      0rem 0.75rem #fd3a69,
+      0rem 0.75rem #9d0191,
+      0 0 10rem #ffffff;
+  }
+
+  60% {
+    text-shadow: 0rem 0rem #ffcc29,
+      0rem 0rem #fd3a69,
+      0rem 0rem #9d0191,
+      0rem 0rem #ffcc29,
+      0rem 0.25rem #fd3a69,
+      0rem 0.5rem #9d0191,
+      0rem 0.75rem #ffcc29,
+      0rem 0.75rem #fd3a69,
+      0rem 0.75rem #9d0191,
+      0rem 0.75rem #ffcc29,
+      0rem 0.75rem #fd3a69,
+      0rem 0.75rem #9d0191,
+      0 0 10rem #ffffff;
+  }
+  70% {
+    text-shadow: 0rem 0rem #ffcc29,
+      0rem 0rem #fd3a69,
+      0rem 0rem #9d0191,
+      0rem 0.25rem #ffcc29,
+      0rem 0.5rem #fd3a69,
+      0rem 0.75rem #9d0191,
+      0rem 0.75rem #ffcc29,
+      0rem 0.75rem #fd3a69,
+      0rem 0.75rem #9d0191,
+      0rem 0.75rem #ffcc29,
+      0rem 0.75rem #fd3a69,
+      0rem 0.75rem #9d0191,
+      0 0 10rem #ffffff;
+  }
+
+  80% {
+    text-shadow: 0rem 0rem #ffcc29,
+      0rem 0rem #fd3a69,
+      0rem 0.25rem #9d0191,
+      0rem 0.5rem #ffcc29,
+      0rem 0.75rem #fd3a69,
+      0rem 0.75rem #9d0191,
+      0rem 0.75rem #ffcc29,
+      0rem 0.75rem #fd3a69,
+      0rem 0.75rem #9d0191,
+      0rem 0.75rem #ffcc29,
+      0rem 0.75rem #fd3a69,
+      0rem 0.75rem #9d0191,
+      0 0 10rem #ffffff;
+  }
+
+  90% {
+    text-shadow: 0rem 0rem #ffcc29,
+      0rem 0.25rem #fd3a69,
+      0rem 0.5rem #9d0191,
+      0rem 0.75rem #ffcc29,
+      0rem 0.75rem #fd3a69,
+      0rem 0.75rem #9d0191,
+      0rem 0.75rem #ffcc29,
+      0rem 0.75rem #fd3a69,
+      0rem 0.75rem #9d0191,
+      0rem 0.75rem #ffcc29,
+      0rem 0.75rem #fd3a69,
+      0rem 0.75rem #9d0191,
+      0 0 10rem #ffffff;
+  }
+
+  100% {
+    text-shadow: 0rem 0.25rem #ffcc29,
+      0rem 0.5rem #fd3a69,
+      0rem 0.75rem #9d0191,
+      0rem 0.75rem #ffcc29,
+      0rem 0.75rem #fd3a69,
+      0rem 0.75rem #9d0191,
+      0rem 0.75rem #ffcc29,
+      0rem 0.75rem #fd3a69,
+      0rem 0.75rem #9d0191,
+      0rem 0.75rem #ffcc29,
+      0rem 0.75rem #fd3a69,
+      0rem 0.75rem #9d0191,
+      0 0 10rem #ffffff;
+  }
+}
