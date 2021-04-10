@@ -1,3 +1,36 @@
+SASS for additional styling
+Bulma Framework (I love how it looks)
+Redux
+Redux Thunk for async movie fetching, or description or something
+Searching
+
+
+There is a `.env.fixme`. Change that to `.env` and after the `REACT_APP_API_KEY=`, insert the API key.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
 ## Available Scripts

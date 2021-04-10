@@ -1,0 +1,42 @@
+@import './_variables.scss';
+@import 'normalize.css';
+@import 'bulma';
+// @import 'bulma/sass/elements/button.sass';
+// @import 'bulma/sass/grid/columns.sass';
+
+:root {
+  font-size: 16px;
+}
+
+html,
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+button {
+  @extend .button;
+  @extend .is-primary;
+}
