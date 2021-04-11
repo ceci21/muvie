@@ -55,7 +55,7 @@ const Search = () => {
         ></input>
         <i class="fas fa-search"></i>
       </div>
-      {query && <d>Searching for movies containing "{query}"</d>}
+      {query && <div className="top-msg">Searching for movies containing "{query}"</div>}
     </div>
   );
 };

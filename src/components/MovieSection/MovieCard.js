@@ -19,14 +19,40 @@ const MovieCard = ({ entry }) => {
   const maxCharLen = 100;
   const year = release_date ? new Date(release_date).getFullYear() : '';
   const linkName = readMore ? 'Read Less' : 'Read More';
+  let descripClassName = 'description';
+  if (overview.length > maxCharLen && readMore) {
+    descripClassName += ' expanded';
+  }
 
   let description;
   if (overview) {
     description = (
       <>
         {!readMore && overview.length > maxCharLen
-          ? overview.substring(0, maxCharLen) + '... '
+          // ? overview.substring(0, maxCharLen) + '... '
+          ? overview + '... '
           : overview}
+      </>
+    );
+  } else {
+    description = <em>No description available</em>;
+  }
+  return (
+    <div className="movie-card">
+      <div className="movie-img">
+        <img
+          loading="lazy"
+          src={getImgPath(poster_path)}
+          alt={`Poster for ${original_title}`}
+        ></img>
+      </div>
+      <div className="movie-details">
+        <h3 className="title">{original_title}</h3>
+        <div>{year}</div>
+        <p className={descripClassName}>
+          <div className="fade-overlay"></div>
+          <span>{description}</span>
+        </p>
         {overview.length > maxCharLen && (
           <a
             className="read-more-link"
@@ -38,30 +64,14 @@ const MovieCard = ({ entry }) => {
             <span>{linkName}</span>
           </a>
         )}
-      </>
-    );
-  } else {
-    description = <em>No description available</em>;
-  }
-  return (
-    <div className="movie-card">
-        <div className="movie-img">
-          <img
-            loading="lazy"
-            src={getImgPath(poster_path)}
-            alt={`Poster for ${original_title}`}
-          ></img>
+        <div className="ratings">
+          <StarRating value={vote_average / 2} />
+          {vote_count ? (
+            <span className="ratings-count">{vote_count} ratings</span>
+          ) : (
+            <span className="ratings-count">No ratings</span>
+          )}
         </div>
-        <div className="movie-details">
-          <h3 className="title">{original_title}</h3>
-          <div>{year}</div>
-          <p className="description">
-            <span>{description}</span>
-          </p>
-          <div className="ratings">
-            <StarRating value={vote_average / 2} />
-            {(vote_count) ? <span className="ratings-count">{vote_count} ratings</span> : <span className="ratings-count">No ratings</span>}
-          </div>
       </div>
     </div>
   );

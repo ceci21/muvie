@@ -1,4 +1,5 @@
 // @import '../../style/_variables.scss';
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 @import '../../style/index.scss';
 
 .app {
@@ -6,11 +7,25 @@
   padding-top: 2rem;
   text-align: center;
 
-
-  .container {
-    height: 100%;
-
-    .column {
+  h1.muvie-title {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    @media only screen and (min-width: $desktop-sm-min) {
+      & {
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
     }
+    text-align: left;
+    font-family: 'Fredoka One', cursive;
+    font-size: 4rem;
   }
+
+  h2.muvie-subtitle {
+    font-size: 3rem;
+  }
+
+  // .container {
+  //   height: 100%;
+  // }
 }
