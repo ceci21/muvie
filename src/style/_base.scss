@@ -8,7 +8,12 @@
   font-size: 16px;
 }
 html {
-  background-color: #151618;
+  // background-color: #151618;
+  background: linear-gradient(195deg, rgb(20, 20, 20), #25282c); // i like this
+  // background: linear-gradient(195deg, rgb(27, 25, 29), #25282c); // but imma try something bluer
+  // background-color: #2d253a;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 html,

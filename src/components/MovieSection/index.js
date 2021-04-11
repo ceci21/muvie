@@ -34,9 +34,9 @@ const MovieSection = () => {
         dataLength={movies.length}
         next={() => dispatch(getMoviesAsync({ query, page: page + 1 }))}
         hasMore={page < totalPages}
-        loader={<h4>Loading some good flix...</h4>}
+        loader={<div>Loading some good flix...</div>}
         scrollThreshold={'10px'}
-        endMessage={<div>That's all!</div>}
+        endMessage={<div className="scroll-msg">That's all!</div>}
       >
         {movies.map((entry, i) => (
           <MovieCard key={i} entry={entry} />

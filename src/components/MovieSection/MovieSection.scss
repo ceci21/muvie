@@ -7,7 +7,9 @@ $icon-color: #a9abb3;
   padding: 1rem;
   // color: black;
   // background-color: #151618;
-  color: #4a4a4a;
+  // color: #4a4a4a;
+  color: #fff;
+
 
   .movie-cols {
     display: grid;
@@ -19,22 +21,33 @@ $icon-color: #a9abb3;
   .movie-card {
     display: flex;
     flex-direction: row;
+    border-radius: 30px;
+    // border-top-left-radius: 30px;
+    // border-bottom-left-radius: 30px;
+    background: transparent;
+    box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.6), 0 0px 0 1px rgba(10, 10, 10, 0.2);
+    // border-bottom-right-radius: 30px;
+    border-radius: 0.5rem;
+    // border-top-right-radius: 30px;
 
     .movie-img {
       // display: flex;
       // align-items: center;
-      background-color: #25282c;
-      background-color: black;
+      background-color: #000;
       flex: 1;
 
       img {
         width: auto;
       }
+
     }
 
     .movie-details {
       text-align: left;
       flex: 2;
+      background: #25282c;
+      border-bottom-right-radius: 0.5rem;
+      border-top-right-radius: 0.5rem;
 
       & > * {
         padding-left: 1rem;
@@ -48,10 +61,12 @@ $icon-color: #a9abb3;
 
       h3.title {
         font-size: 1.5rem;
+        color: #fff;
       }
 
       .description {
         display: block;
+        color: #fff;
       }
 
     }
@@ -59,7 +74,21 @@ $icon-color: #a9abb3;
 }
 
 
+// new col
 @media only screen and (min-width: $desktop-sm-min) {
+  .movie-section {
+    padding: 2rem;
+    .movie-cols {
+      // grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+  }
+}
+
+
+
+// new col
+@media only screen and (min-width: $desktop-md-min) {
   .movie-section {
     padding: 2rem;
     .movie-cols {
