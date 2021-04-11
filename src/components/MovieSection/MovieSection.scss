@@ -30,12 +30,13 @@ $icon-color: #a9abb3;
         grid-template-columns: 1fr 1fr;
       }
     }
-    @media only screen and (min-width: $desktop-lg-min) {
+    @media only screen and (min-width: $desktop-xl-min) {
       & {
         grid-template-columns: 1fr 1fr 1fr;
       }
     }
   }
+
   .movie-card {
     display: flex;
     flex-direction: row;
@@ -47,13 +48,18 @@ $icon-color: #a9abb3;
       0 0px 0 1px rgba(10, 10, 10, 0.2);
     // border-bottom-right-radius: 30px;
     border-radius: 0.5rem;
+    transition: height 3s;
     // border-top-right-radius: 30px;
 
     .movie-img {
       // display: flex;
       // align-items: center;
       background-color: #000;
+      background: linear-gradient(0deg, #000, #25282c);
       flex: 1;
+      overflow:auto;
+      border-bottom-left-radius: 0.5rem;
+      border-top-left-radius: 0.5rem;
 
       img {
         width: auto;
@@ -66,15 +72,20 @@ $icon-color: #a9abb3;
       background: #25282c;
       border-bottom-right-radius: 0.5rem;
       border-top-right-radius: 0.5rem;
-      .star {
-        color: #ff9933;
-        // cursor: pointer;
+
+
+      .ratings {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .star-rating {
+          font-size: 1.2rem;
+        }
+        .ratings-count {
+          margin-left: 1.2rem;
+        }
       }
 
-      .ratings-count {
-        margin-left: 1rem;
-
-      }
 
 
       & > * {
@@ -104,5 +115,9 @@ $icon-color: #a9abb3;
         color: #fff;
       }
     }
+  }
+
+  .scroll-msg {
+    padding: 4rem;
   }
 }

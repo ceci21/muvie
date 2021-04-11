@@ -58,9 +58,9 @@ const MovieCard = ({ entry }) => {
           <p className="description">
             <span>{description}</span>
           </p>
-          <div>
+          <div className="ratings">
             <StarRating value={vote_average / 2} />
-            {vote_count && <span className="ratings-count">{vote_count} ratings</span>}
+            {(vote_count) ? <span className="ratings-count">{vote_count} ratings</span> : <span className="ratings-count">No ratings</span>}
           </div>
       </div>
     </div>

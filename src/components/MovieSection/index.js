@@ -30,7 +30,7 @@ const MovieSection = () => {
     <div id="movie-section" className="movie-section section">
       {movies && movies.length > 0 && <p>{movies.length} results</p>}
       <InfiniteScroll
-        className="movie-cols"
+        // className="movie-cols"
         dataLength={movies.length}
         next={() => dispatch(getMoviesAsync({ query, page: page + 1 }))}
         hasMore={page < totalPages}
@@ -38,9 +38,11 @@ const MovieSection = () => {
         scrollThreshold={'10px'}
         endMessage={<div className="scroll-msg">That's all!</div>}
       >
+        <div className="movie-cols">
         {movies.map((entry, i) => (
           <MovieCard key={i} entry={entry} />
         ))}
+        </div>
       </InfiniteScroll>
     </div>
   );
