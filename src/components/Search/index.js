@@ -47,15 +47,19 @@ const Search = () => {
   return (
     <div className="search">
       <div className="control">
-        <input
-          className="input"
-          type="text"
-          placeholder="Search for your favorite movies"
-          onChange={onChangeHandler.current}
-        ></input>
-        <i class="fas fa-search"></i>
+        <div className="input-container">
+          <input
+            className="input"
+            type="text"
+            placeholder="Search for your favorite movies"
+            onChange={onChangeHandler.current}
+          ></input>
+          <i class="fas fa-search"></i>
+        </div>
       </div>
-      {query && <div className="top-msg">Searching for movies containing "{query}"</div>}
+      {query && (
+        <div className="top-msg">Searching for movies containing "{query}"</div>
+      )}
     </div>
   );
 };

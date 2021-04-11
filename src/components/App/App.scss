@@ -7,7 +7,7 @@
   padding-top: 2rem;
   text-align: center;
 
-  h1.muvie-title {
+  .titles {
     padding-left: 1rem;
     padding-right: 1rem;
     @media only screen and (min-width: $desktop-sm-min) {
@@ -16,15 +16,49 @@
         padding-right: 2rem;
       }
     }
+  }
+
+  h1.muvie-title {
+    display: inline-block;
+
     text-align: left;
     font-family: 'Fredoka One', cursive;
     font-size: 4rem;
   }
 
   h2.muvie-subtitle {
-    font-size: 3rem;
+    display: inline-block;
+    text-align: left;
+    font-size: 2rem;
   }
 
+  .button-up {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    border-radius: 6rem;
+    width: 6rem;
+    height: 6rem;
+    display: none;
+    font-size: 0.8rem;
+
+      background: #25282c;
+
+    box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.6),
+      0 0px 0 1px rgba(10, 10, 10, 0.2);
+    @media only screen and (max-width: $desktop-sm-max) {
+      display: flex;
+
+      i {
+        font-size: 1.8rem;
+
+      }
+    }
+  }
   // .container {
   //   height: 100%;
   // }
