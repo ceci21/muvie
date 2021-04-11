@@ -25,13 +25,14 @@
     color: #faf0f0;
     line-height: 0.8em;
     animation-name: lavalamp;
-    animation-duration: 2s;
+    animation-duration: 3s;
+    animation-timing-function: ease-in;
     // text-shadow: 0 0 10rem #ffffff, 0px 0.25rem #fd3a69, 0 0.5rem #9d0191;
     animation-iteration-count: 1;
     animation-delay: 1s;
     animation-fill-mode: forwards;
     text-align: left;
-    font-family: 'Fredoka One', cursive;
+    font-family: 'Fredoka One', sans-serif;
     font-size: 4rem;
   }
 
@@ -47,6 +48,9 @@
   //   height: 100%;
   // }
 }
+
+
+
 
 @keyframes lavalamp {
   0% {
