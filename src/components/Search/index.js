@@ -53,6 +53,7 @@ const Search = () => {
           placeholder="Search for your favorite movies"
           onChange={onChangeHandler.current}
         ></input>
+        <i class="fas fa-search"></i>
       </div>
       {query && <d>Searching for movies containing "{query}"</d>}
     </div>

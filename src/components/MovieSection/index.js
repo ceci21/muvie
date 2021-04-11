@@ -26,15 +26,17 @@ const MovieSection = () => {
     console.log(movies, status, movies.length, page, totalPages);
   }, [movies, status, totalPages]);
 
+  const results = (movies && movies.length && movies.length === 1) ? 'result' : 'results';
+
   return (
     <div id="movie-section" className="movie-section section">
-      {movies && movies.length > 0 && <p>{movies.length} results</p>}
+      {movies && movies.length > 0 && <p className="results-msg">{movies.length} {results}</p>}
       <InfiniteScroll
         // className="movie-cols"
         dataLength={movies.length}
         next={() => dispatch(getMoviesAsync({ query, page: page + 1 }))}
         hasMore={page < totalPages}
-        loader={<div>Loading some good flix...</div>}
+        loader={<div className="scroll-msg">Loading some good flix...</div>}
         scrollThreshold={'10px'}
         endMessage={<div className="scroll-msg">That's all!</div>}
       >

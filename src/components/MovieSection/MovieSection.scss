@@ -15,6 +15,16 @@ $icon-color: #a9abb3;
   // color: #4a4a4a;
   color: #fff;
 
+  .results-msg {
+    color: #aeaeae;
+    margin-bottom: 1rem;
+    @media only screen and (min-width: $desktop-sm-min) {
+      & {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+
   .movie-cols {
     display: grid;
     grid-template-columns: 1fr;
@@ -113,6 +123,12 @@ $icon-color: #a9abb3;
       .description {
         display: block;
         color: #fff;
+
+        .read-more-link {
+          &:hover {
+            color: #ff9933;;
+          }
+        }
       }
     }
   }

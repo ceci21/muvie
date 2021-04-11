@@ -1,16 +1,20 @@
 @import '../../style/_variables.scss';
 
-
 .search {
   .control {
+    // background-color: #25282c;
     padding: 1rem;
-  }
-}
+    @media only screen and (min-width: $desktop-sm-min) {
+      & {
+        padding: 2rem;
+      }
+    }
 
-@media only screen and (min-width: $desktop-sm-min) {
-  .search {
-    .control {
-      padding: 2rem;
+    input {
+      color: white;
+      box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.6),
+      0 0px 0 1px rgba(10, 10, 10, 0.2);
+      border: 1px;
     }
   }
 }
