@@ -1,0 +1,35 @@
+@import '../../style/_variables.scss';
+
+.scroll-to-top-btn {
+  // display: none;
+  display: flex;
+  opacity: 0;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  border-radius: 6rem;
+  width: 6rem;
+  height: 6rem;
+  font-size: 0.8rem;
+  background: #25282c;
+  cursor: pointer;
+  transition: opacity 0.2s ease-in;
+  pointer-events: none;
+  i {
+    font-size: 1.8rem;
+  }
+
+  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.6),
+  0 0px 0 1px rgba(10, 10, 10, 0.2);
+
+  @media only screen and (max-width: $desktop-sm-max) {
+    &.show {
+      opacity: 1;
+      transition: opacity 0.2s ease-out;
+      pointer-events: all;
+    }
+  }
+}

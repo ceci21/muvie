@@ -29,7 +29,7 @@ const MovieSection = () => {
   const results = (movies && movies.length && movies.length === 1) ? 'result' : 'results';
 
   return (
-    <div id="movie-section" className="movie-section section">
+    <div id="movie-section" className="movie-section">
       {movies && movies.length > 0 && <p className="results-msg">{movies.length} {results}</p>}
       <InfiniteScroll
         // className="movie-cols"

@@ -1,14 +1,19 @@
 @import '../../style/_variables.scss';
 
 .search {
-  .control {
-    padding: 1rem;
-    @media only screen and (min-width: $desktop-sm-min) {
-      & {
-        padding: 2rem;
-      }
-    }
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
 
+  @media only screen and (min-width: $desktop-sm-min) {
+    & {
+      margin-left: 2rem;
+      margin-right: 2rem;
+      margin-bottom: 2rem;
+    }
+  }
+  .control {
+    margin-bottom: 1rem;
     input {
       background-color: #25282c;
       color: white;
@@ -35,13 +40,13 @@
 
   .top-msg {
     text-align: left;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    @media only screen and (min-width: $desktop-sm-min) {
-      & {
-        padding-left: 2rem;
-        padding-right: 2rem;
-      }
-    }
+    // margin-left: 1rem;
+    // margin-right: 1rem;
+    // @media only screen and (min-width: $desktop-sm-min) {
+    //   & {
+    //     margin-left: 2rem;
+    //     margin-right: 2rem;
+    //   }
+    // }
   }
 }

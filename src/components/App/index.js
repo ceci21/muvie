@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.scss';
 import MovieSection from '../MovieSection';
 import Search from '../Search';
+import ScrollToTopBtn from '../ScrollToTopBtn';
 
 
 const App = () => {
@@ -13,7 +14,7 @@ const App = () => {
       </div>
       <Search />
       <MovieSection />
-      <div className="button-up"><i class="fas fa-arrow-up"></i><div>up to top</div></div>
+      <ScrollToTopBtn />
     </div>
   );
 }
