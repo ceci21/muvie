@@ -42,7 +42,7 @@ const MovieSection = () => {
       >
         <div className="movie-cols">
         {movies.map((entry, i) => (
-          <MovieCard key={i} entry={entry} />
+          <MovieCard key={entry.original_title} entry={entry} />
         ))}
         </div>
       </InfiniteScroll>
