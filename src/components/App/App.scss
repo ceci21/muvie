@@ -22,7 +22,14 @@
 
   h1.muvie-title {
     display: inline-block;
-
+    color: #faf0f0;
+    line-height: 0.8em;
+    animation-name: lavalamp;
+    animation-duration: 2s;
+    // text-shadow: 0 0 10rem #ffffff, 0px 0.25rem #fd3a69, 0 0.5rem #9d0191;
+    animation-iteration-count: 1;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
     text-align: left;
     font-family: 'Fredoka One', cursive;
     font-size: 4rem;
@@ -31,10 +38,92 @@
   h2.muvie-subtitle {
     display: inline-block;
     text-align: left;
+    font-weight: 100;
     font-size: 2rem;
+    vertical-align: middle;
   }
 
   // .container {
   //   height: 100%;
   // }
+}
+
+@keyframes lavalamp {
+  0% {
+    text-shadow: 0 0 0rem #ffffff,
+    0rem 0rem #ffcc29,
+    0px 0rem #fd3a69,
+    0rem 0rem #9d0191;
+  }
+
+  10% {
+    text-shadow: 0 0 10rem #ffffff,
+    0rem 0.25rem #ffcc29,
+    0px 0.5rem #fd3a69,
+    0rem 0.75rem #9d0191;
+  }
+
+  20% {
+    text-shadow:
+    0 0 10rem #ffffff,
+    0rem 0.25rem #9d0191,
+    0rem 0.5rem #ffcc29,
+    0px 0.75rem #fd3a69;
+  }
+
+  30% {
+    text-shadow: 0 0 10rem #ffffff,
+    0px 0.25rem #fd3a69,
+    0rem 0.5rem #9d0191,
+    0rem 0.75rem #ffcc29;
+  }
+  40% {
+    text-shadow: 0 0 10rem #ffffff,
+    0rem 0.25rem #ffcc29,
+    0px 0.5rem #fd3a69,
+    0rem 0.75rem #9d0191;
+  }
+
+  50% {
+    text-shadow:
+    0 0 10rem #ffffff,
+    0rem 0.25rem #9d0191,
+    0rem 0.5rem #ffcc29,
+    0px 0.75rem #fd3a69;
+  }
+
+  60% {
+    text-shadow: 0 0 10rem #ffffff,
+    0px 0.25rem #fd3a69,
+    0rem 0.5rem #9d0191,
+    0rem 0.75rem #ffcc29;
+  }
+  70% {
+    text-shadow: 0 0 10rem #ffffff,
+    0rem 0.25rem #ffcc29,
+    0px 0.5rem #fd3a69,
+    0rem 0.75rem #9d0191;
+  }
+
+  80% {
+    text-shadow:
+    0 0 10rem #ffffff,
+    0rem 0.25rem #9d0191,
+    0rem 0.5rem #ffcc29,
+    0px 0.75rem #fd3a69;
+  }
+
+  90% {
+    text-shadow: 0 0 10rem #ffffff,
+    0px 0.25rem #fd3a69,
+    0rem 0.5rem #9d0191,
+    0rem 0.75rem #ffcc29;
+  }
+
+  100% {
+    text-shadow: 0 0 10rem #ffffff,
+    0rem 0.25rem #ffcc29,
+    0px 0.5rem #fd3a69,
+    0rem 0.75rem #9d0191;
+  }
 }
