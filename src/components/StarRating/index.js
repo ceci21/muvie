@@ -3,7 +3,7 @@ import './StarRating.scss';
 
 const Star = ({ marked, starId }) => {
   return (
-    <span data-star-id={starId} className="star" role="button">
+    <span data-star-id={starId} className="star">
       {marked ? '\u2605' : '\u2606'}
     </span>
   );
@@ -21,6 +21,7 @@ const StarRating = ({ value }) => {
   };
   return (
     <div
+      className="star-rating"
       onMouseOut={() => hoverOver(null)}
       onClick={e => setRating(e.target.getAttribute('data-star-id') || rating)}
       onMouseOver={hoverOver}
