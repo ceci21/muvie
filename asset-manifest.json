@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/muvie/static/css/main.f21897dc.chunk.css",
+    "main.css": "/muvie/static/css/main.3a31cc82.chunk.css",
     "main.js": "/muvie/static/js/main.1689f5d1.chunk.js",
     "main.js.map": "/muvie/static/js/main.1689f5d1.chunk.js.map",
     "runtime-main.js": "/muvie/static/js/runtime-main.9cdae47d.js",
@@ -10,14 +10,14 @@
     "static/js/2.02fbb3db.chunk.js.map": "/muvie/static/js/2.02fbb3db.chunk.js.map",
     "index.html": "/muvie/index.html",
     "static/css/2.70c372c2.chunk.css.map": "/muvie/static/css/2.70c372c2.chunk.css.map",
-    "static/css/main.f21897dc.chunk.css.map": "/muvie/static/css/main.f21897dc.chunk.css.map",
+    "static/css/main.3a31cc82.chunk.css.map": "/muvie/static/css/main.3a31cc82.chunk.css.map",
     "static/js/2.02fbb3db.chunk.js.LICENSE.txt": "/muvie/static/js/2.02fbb3db.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.9cdae47d.js",
     "static/css/2.70c372c2.chunk.css",
     "static/js/2.02fbb3db.chunk.js",
-    "static/css/main.f21897dc.chunk.css",
+    "static/css/main.3a31cc82.chunk.css",
     "static/js/main.1689f5d1.chunk.js"
   ]
 }
