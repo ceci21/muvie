@@ -1,18 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import StarRating from '../StarRating';
+import getCharLen from '../../lib/getCharLen';
+import { breakpoints } from '../../lib/constants';
+import './MovieCard.scss';
 
 const desktopScrn = 1024;
 
-const getImgPath = (slug) =>
+const getImgPosterPath = (slug) =>
   slug
     ? `https://image.tmdb.org/t/p/w400${slug}`
     : `https://via.placeholder.com/300x400/000000/FFFFFF/?text=No+Poster+Image+Found`;
-
-const getCharLen = (currentWidth, minCharLen, maxCharLen, minWidth, maxWidth) => {
-  const ratio = (maxCharLen - minCharLen) / (maxWidth - minWidth);
-  const result = Math.floor(ratio * (currentWidth - minWidth));
-  return result || 0;
-};
 
 const MovieCard = ({ entry }) => {
   const [width, setWidth] = React.useState(window.innerWidth);
@@ -37,33 +34,43 @@ const MovieCard = ({ entry }) => {
 
   useEffect(() => {
     let minCharLen, maxCharLen, minWidth, maxWidth;
+    const {
+      MOBILE,
+      TABLET,
+      DESKTOP_SM,
+      DESKTOP_MD,
+      DESKTOP_LG,
+      DESKTOP_XL,
+    } = breakpoints;
 
-    if (width >= 480 && width <= 1024) {
+    if (width >= TABLET && width <= DESKTOP_MD) {
       minCharLen = 30;
       maxCharLen = 220;
-      minWidth = 480;
-      maxWidth = 1024;
-    }
-
-    else if (width > 1024 && width < 1600) {
+      minWidth = TABLET;
+      maxWidth = DESKTOP_MD;
+    } else if (width > DESKTOP_MD && width < DESKTOP_LG) {
       minCharLen = 40;
       maxCharLen = 100;
-      minWidth = 1024;
-      maxWidth = 1600;
-    }
-
-    else if (width >= 1600) {
+      minWidth = DESKTOP_MD;
+      maxWidth = DESKTOP_LG;
+    } else if (width >= DESKTOP_XL) {
       minCharLen = 60;
       maxCharLen = 160;
-      minWidth = 1600;
-      maxWidth = 2000;
+      minWidth = DESKTOP_XL;
+      maxWidth = 2000; // Since this calculation is based on a ratio, I set the max to 2000 despite screens being much larger than that
     } else {
       minCharLen = 10;
       maxCharLen = 50;
       minWidth = 0;
       maxWidth = 480;
     }
-    const result = getCharLen(width, minCharLen, maxCharLen, minWidth, maxWidth);
+    const result = getCharLen(
+      width,
+      minCharLen,
+      maxCharLen,
+      minWidth,
+      maxWidth
+    );
     setMaxCharLen(minCharLen + result);
   }, [width]);
 
@@ -80,8 +87,7 @@ const MovieCard = ({ entry }) => {
       <>
         {!readMore && overview.length > maxCharLen
           ? overview.substring(0, maxCharLen) + '... '
-          : // ? overview + '... '
-            overview}
+          : overview}
       </>
     );
   } else {
@@ -91,16 +97,16 @@ const MovieCard = ({ entry }) => {
     <div className="movie-card">
       <div className="movie-img">
         <img
-          loading="lazy"
-          src={getImgPath(poster_path)}
+          src={getImgPosterPath(poster_path)}
           alt={`Poster for ${original_title}`}
+          loading="lazy"
         ></img>
       </div>
       <div className="movie-details">
-        <h3 className="title">{original_title}</h3>
+        <h3 className="title"><a href={`https://www.themoviedb.org/movie/${entry.id}`}>{original_title}</a></h3>
         <div>{year}</div>
         <p className={descripClassName}>
-          <div className="fade-overlay"></div>
+          {/* <div className="fade-overlay"></div> */}
           <span>{description}</span>
         </p>
         {overview.length > maxCharLen && (

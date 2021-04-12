@@ -1,5 +1,10 @@
 @import 'bulma/sass/utilities/_all.sass';
 
+@mixin box-shadow {
+  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.6),
+    0 0px 0 1px rgba(10, 10, 10, 0.2);
+}
+
 $desktop-xl-min: 1601px;
 
 $desktop-lg-max: 1600px;
@@ -17,8 +22,6 @@ $tablet-min: 481px;
 $mobile-max: 480px;
 $mobile-min: 320px;
 
-
-
 $margin-xs: 0.25rem;
 $margin-s: 0.5rem;
 $margin-m: 1rem;
@@ -27,4 +30,11 @@ $padding-xs: 0.25rem;
 $padding-s: 0.5rem;
 $padding-m: 1rem;
 $padding-l: 2rem;
+
+$spacing-s: 1rem;
+$spacing-m: 2rem;
 // $gap, $tablet, $desktop
+
+$color-shadow: #25282c;
+$color-azure: #3273dc;
+$color-salt: #aeaeae;

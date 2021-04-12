@@ -7,34 +7,35 @@
   padding-top: 2rem;
   text-align: center;
 
+  @media only screen and (min-width: $desktop-xl-min) {
+    & {
+      max-width: 1600px;
+      margin: auto;
+    }
+  }
+
   .titles {
-    margin-left: 1rem;
-    margin-right: 1rem;
-    margin-bottom: 1rem;
+    margin: 0 1rem 1rem 1rem;
     @media only screen and (min-width: $desktop-sm-min) {
       & {
-        margin-left: 2rem;
-        margin-right: 2rem;
-        margin-bottom: 2rem;
+        margin: 0 2rem 2rem 2rem;
       }
     }
   }
 
   h1.muvie-title {
-    // color: #25282c;
-    // -webkit-text-stroke: 2px white;
     display: inline-block;
     color: #fff;
     line-height: 0.8em;
+    text-align: left;
+    font-family: 'Fredoka One', sans-serif;
+    font-size: 4rem;
     animation-name: lavalamp;
     animation-duration: 3s;
     animation-timing-function: ease-in;
     animation-iteration-count: 1;
     animation-delay: 2s;
     animation-fill-mode: forwards;
-    text-align: left;
-    font-family: 'Fredoka One', sans-serif;
-    font-size: 4rem;
   }
 
   h2.muvie-subtitle {
@@ -45,198 +46,89 @@
     vertical-align: middle;
   }
 
-  // .container {
-  //   height: 100%;
-  // }
 }
 
-
-
-
 @keyframes lavalamp {
-  // make math out of this
+  // make math out of this, sass and all
   0% {
-    text-shadow:
-    0rem 0rem #ffcc29,
-    0rem 0rem #fd3a69,
-    0rem 0rem #9d0191,
-    0rem 0rem #ffcc29,
-    0rem 0rem #fd3a69,
-    0rem 0rem #9d0191,
-    0rem 0rem #ffcc29,
-    0rem 0rem #fd3a69,
-    0rem 0rem #9d0191,
-    0rem 0rem #ffcc29,
-    0rem 0rem #fd3a69,
-    0rem 0rem #9d0191,
-    0 0 0rem #ffffff;
+    text-shadow: 0rem 0rem #ffcc29, 0rem 0rem #fd3a69, 0rem 0rem #9d0191,
+      0rem 0rem #ffcc29, 0rem 0rem #fd3a69, 0rem 0rem #9d0191, 0rem 0rem #ffcc29,
+      0rem 0rem #fd3a69, 0rem 0rem #9d0191, 0rem 0rem #ffcc29, 0rem 0rem #fd3a69,
+      0rem 0rem #9d0191, 0 0 0rem #ffffff;
   }
 
   10% {
-    text-shadow:
-    0rem 0rem #ffcc29,
-    0rem 0rem #fd3a69,
-    0rem 0rem #9d0191,
-    0rem 0rem #ffcc29,
-    0rem 0rem #fd3a69,
-    0rem 0rem #9d0191,
-    0rem 0rem #ffcc29,
-    0rem 0rem #fd3a69,
-    0rem 0rem #9d0191,
-    0rem 0.25rem #ffcc29,
-    0rem 0.5rem #fd3a69,
-    0rem 0.75rem #9d0191,
-    0 0 10rem #ffffff;
+    text-shadow: 0rem 0rem #ffcc29, 0rem 0rem #fd3a69, 0rem 0rem #9d0191,
+      0rem 0rem #ffcc29, 0rem 0rem #fd3a69, 0rem 0rem #9d0191, 0rem 0rem #ffcc29,
+      0rem 0rem #fd3a69, 0rem 0rem #9d0191, 0rem 0.25rem #ffcc29,
+      0rem 0.5rem #fd3a69, 0rem 0.75rem #9d0191, 0 0 10rem #ffffff;
   }
 
   20% {
-    text-shadow:
-    0rem 0rem #ffcc29,
-    0rem 0rem #fd3a69,
-    0rem 0rem #9d0191,
-    0rem 0rem #ffcc29,
-    0rem 0rem #fd3a69,
-    0rem 0rem #9d0191,
-    0rem 0rem #ffcc29,
-    0rem 0rem #fd3a69,
-    0rem 0.25rem #9d0191,
-    0rem 0.5rem #ffcc29,
-    0rem 0.75rem #fd3a69,
-    0rem 0.75rem #9d0191,
-    0 0 10rem #ffffff;
+    text-shadow: 0rem 0rem #ffcc29, 0rem 0rem #fd3a69, 0rem 0rem #9d0191,
+      0rem 0rem #ffcc29, 0rem 0rem #fd3a69, 0rem 0rem #9d0191, 0rem 0rem #ffcc29,
+      0rem 0rem #fd3a69, 0rem 0.25rem #9d0191, 0rem 0.5rem #ffcc29,
+      0rem 0.75rem #fd3a69, 0rem 0.75rem #9d0191, 0 0 10rem #ffffff;
   }
 
   30% {
-    text-shadow:
-    0rem 0rem #ffcc29,
-    0rem 0rem #fd3a69,
-    0rem 0rem #9d0191,
-    0rem 0rem #ffcc29,
-    0rem 0rem #fd3a69,
-    0rem 0rem #9d0191,
-    0rem 0rem #ffcc29,
-    0rem 0.25rem #fd3a69,
-    0rem 0.5rem #9d0191,
-    0rem 0.75rem #ffcc29,
-    0rem 0.75rem #fd3a69,
-    0rem 0.75rem #9d0191,
-    0 0 10rem #ffffff;
+    text-shadow: 0rem 0rem #ffcc29, 0rem 0rem #fd3a69, 0rem 0rem #9d0191,
+      0rem 0rem #ffcc29, 0rem 0rem #fd3a69, 0rem 0rem #9d0191, 0rem 0rem #ffcc29,
+      0rem 0.25rem #fd3a69, 0rem 0.5rem #9d0191, 0rem 0.75rem #ffcc29,
+      0rem 0.75rem #fd3a69, 0rem 0.75rem #9d0191, 0 0 10rem #ffffff;
   }
   40% {
-    text-shadow:
-    0rem 0rem #ffcc29,
-    0rem 0rem #fd3a69,
-    0rem 0rem #9d0191,
-    0rem 0rem #ffcc29,
-    0rem 0rem #fd3a69,
-    0rem 0rem #9d0191,
-    0rem 0.25rem #ffcc29,
-    0rem 0.5rem #fd3a69,
-    0rem 0.75rem #9d0191,
-    0rem 0.75rem #ffcc29,
-    0rem 0.75rem #fd3a69,
-    0rem 0.75rem #9d0191,
-    0 0 10rem #ffffff;
+    text-shadow: 0rem 0rem #ffcc29, 0rem 0rem #fd3a69, 0rem 0rem #9d0191,
+      0rem 0rem #ffcc29, 0rem 0rem #fd3a69, 0rem 0rem #9d0191,
+      0rem 0.25rem #ffcc29, 0rem 0.5rem #fd3a69, 0rem 0.75rem #9d0191,
+      0rem 0.75rem #ffcc29, 0rem 0.75rem #fd3a69, 0rem 0.75rem #9d0191,
+      0 0 10rem #ffffff;
   }
 
   50% {
-    text-shadow:
-    0rem 0rem #ffcc29,
-    0rem 0rem #fd3a69,
-    0rem 0rem #9d0191,
-    0rem 0rem #ffcc29,
-    0rem 0rem #fd3a69,
-    0rem 0.25rem #9d0191,
-    0rem 0.5rem #ffcc29,
-    0rem 0.75rem #fd3a69,
-    0rem 0.75rem #9d0191,
-    0rem 0.75rem #ffcc29,
-    0rem 0.75rem #fd3a69,
-    0rem 0.75rem #9d0191,
-    0 0 10rem #ffffff;
+    text-shadow: 0rem 0rem #ffcc29, 0rem 0rem #fd3a69, 0rem 0rem #9d0191,
+      0rem 0rem #ffcc29, 0rem 0rem #fd3a69, 0rem 0.25rem #9d0191,
+      0rem 0.5rem #ffcc29, 0rem 0.75rem #fd3a69, 0rem 0.75rem #9d0191,
+      0rem 0.75rem #ffcc29, 0rem 0.75rem #fd3a69, 0rem 0.75rem #9d0191,
+      0 0 10rem #ffffff;
   }
 
   60% {
-    text-shadow:
-    0rem 0rem #ffcc29,
-    0rem 0rem #fd3a69,
-    0rem 0rem #9d0191,
-    0rem 0rem #ffcc29,
-    0rem 0.25rem #fd3a69,
-    0rem 0.5rem #9d0191,
-    0rem 0.75rem #ffcc29,
-    0rem 0.75rem #fd3a69,
-    0rem 0.75rem #9d0191,
-    0rem 0.75rem #ffcc29,
-    0rem 0.75rem #fd3a69,
-    0rem 0.75rem #9d0191,
-    0 0 10rem #ffffff;
+    text-shadow: 0rem 0rem #ffcc29, 0rem 0rem #fd3a69, 0rem 0rem #9d0191,
+      0rem 0rem #ffcc29, 0rem 0.25rem #fd3a69, 0rem 0.5rem #9d0191,
+      0rem 0.75rem #ffcc29, 0rem 0.75rem #fd3a69, 0rem 0.75rem #9d0191,
+      0rem 0.75rem #ffcc29, 0rem 0.75rem #fd3a69, 0rem 0.75rem #9d0191,
+      0 0 10rem #ffffff;
   }
   70% {
-    text-shadow:
-    0rem 0rem #ffcc29,
-    0rem 0rem #fd3a69,
-    0rem 0rem #9d0191,
-    0rem 0.25rem #ffcc29,
-    0rem 0.5rem #fd3a69,
-    0rem 0.75rem #9d0191,
-    0rem 0.75rem #ffcc29,
-    0rem 0.75rem #fd3a69,
-    0rem 0.75rem #9d0191,
-    0rem 0.75rem #ffcc29,
-    0rem 0.75rem #fd3a69,
-    0rem 0.75rem #9d0191,
-    0 0 10rem #ffffff;
+    text-shadow: 0rem 0rem #ffcc29, 0rem 0rem #fd3a69, 0rem 0rem #9d0191,
+      0rem 0.25rem #ffcc29, 0rem 0.5rem #fd3a69, 0rem 0.75rem #9d0191,
+      0rem 0.75rem #ffcc29, 0rem 0.75rem #fd3a69, 0rem 0.75rem #9d0191,
+      0rem 0.75rem #ffcc29, 0rem 0.75rem #fd3a69, 0rem 0.75rem #9d0191,
+      0 0 10rem #ffffff;
   }
 
   80% {
-    text-shadow:
-    0rem 0rem #ffcc29,
-    0rem 0rem #fd3a69,
-    0rem 0.25rem #9d0191,
-    0rem 0.5rem #ffcc29,
-    0rem 0.75rem #fd3a69,
-    0rem 0.75rem #9d0191,
-    0rem 0.75rem #ffcc29,
-    0rem 0.75rem #fd3a69,
-    0rem 0.75rem #9d0191,
-    0rem 0.75rem #ffcc29,
-    0rem 0.75rem #fd3a69,
-    0rem 0.75rem #9d0191,
-    0 0 10rem #ffffff;
+    text-shadow: 0rem 0rem #ffcc29, 0rem 0rem #fd3a69, 0rem 0.25rem #9d0191,
+      0rem 0.5rem #ffcc29, 0rem 0.75rem #fd3a69, 0rem 0.75rem #9d0191,
+      0rem 0.75rem #ffcc29, 0rem 0.75rem #fd3a69, 0rem 0.75rem #9d0191,
+      0rem 0.75rem #ffcc29, 0rem 0.75rem #fd3a69, 0rem 0.75rem #9d0191,
+      0 0 10rem #ffffff;
   }
 
   90% {
-    text-shadow:
-    0rem 0rem #ffcc29,
-    0rem 0.25rem #fd3a69,
-    0rem 0.5rem #9d0191,
-    0rem 0.75rem #ffcc29,
-    0rem 0.75rem #fd3a69,
-    0rem 0.75rem #9d0191,
-    0rem 0.75rem #ffcc29,
-    0rem 0.75rem #fd3a69,
-    0rem 0.75rem #9d0191,
-    0rem 0.75rem #ffcc29,
-    0rem 0.75rem #fd3a69,
-    0rem 0.75rem #9d0191,
-    0 0 10rem #ffffff;
+    text-shadow: 0rem 0rem #ffcc29, 0rem 0.25rem #fd3a69, 0rem 0.5rem #9d0191,
+      0rem 0.75rem #ffcc29, 0rem 0.75rem #fd3a69, 0rem 0.75rem #9d0191,
+      0rem 0.75rem #ffcc29, 0rem 0.75rem #fd3a69, 0rem 0.75rem #9d0191,
+      0rem 0.75rem #ffcc29, 0rem 0.75rem #fd3a69, 0rem 0.75rem #9d0191,
+      0 0 10rem #ffffff;
   }
 
   100% {
-    text-shadow:
-    0rem 0.25rem #ffcc29,
-    0rem 0.5rem #fd3a69,
-    0rem 0.75rem #9d0191,
-    0rem 0.75rem #ffcc29,
-    0rem 0.75rem #fd3a69,
-    0rem 0.75rem #9d0191,
-    0rem 0.75rem #ffcc29,
-    0rem 0.75rem #fd3a69,
-    0rem 0.75rem #9d0191,
-    0rem 0.75rem #ffcc29,
-    0rem 0.75rem #fd3a69,
-    0rem 0.75rem #9d0191,
-    0 0 10rem #ffffff;
+    text-shadow: 0rem 0.25rem #ffcc29, 0rem 0.5rem #fd3a69, 0rem 0.75rem #9d0191,
+      0rem 0.75rem #ffcc29, 0rem 0.75rem #fd3a69, 0rem 0.75rem #9d0191,
+      0rem 0.75rem #ffcc29, 0rem 0.75rem #fd3a69, 0rem 0.75rem #9d0191,
+      0rem 0.75rem #ffcc29, 0rem 0.75rem #fd3a69, 0rem 0.75rem #9d0191,
+      0 0 10rem #ffffff;
   }
 }

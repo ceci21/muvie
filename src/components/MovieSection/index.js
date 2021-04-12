@@ -5,7 +5,7 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 import {
   getMoviesAsync,
 } from './moviesSlice';
-import MovieCard from './MovieCard';
+import MovieCard from '../MovieCard';
 
 const MovieSection = () => {
   const dispatch = useDispatch();
