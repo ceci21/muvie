@@ -1,28 +1,20 @@
 import React, { useEffect, useRef, useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
-  getMovies,
   getMoviesAsync,
   setQuery,
   selectQuery,
   selectPage,
 } from '../MovieSection/moviesSlice';
+import debounce from '../../lib/debounce';
 import './Search.scss';
-
-function debounce(func, timeout = 300) {
-  let timer;
-  return (...args) => {
-    clearTimeout(timer);
-    timer = setTimeout(() => {
-      func.apply(this, args);
-    }, timeout);
-  };
-}
 
 const Search = () => {
   const dispatch = useDispatch();
-  const page = useSelector(selectPage);
-  const query = useSelector(selectQuery);
+  const { page, query } = useSelector(({ movies: { page, query } }) => ({
+    page,
+    query,
+  }));
   const onChangeHandler = useRef(
     debounce((e) => {
       const { value } = e.target;
@@ -40,10 +32,6 @@ const Search = () => {
     }, 500);
   }, []);
 
-  useEffect(() => {
-    console.log(page, query);
-  }, [query]);
-
   return (
     <div className="search">
       <div className="control">
@@ -54,7 +42,7 @@ const Search = () => {
             placeholder="Search for your favorite movies"
             onChange={onChangeHandler.current}
           ></input>
-          <i class="fas fa-search"></i>
+          <i className="fas fa-search"></i>
         </div>
       </div>
       {query && (

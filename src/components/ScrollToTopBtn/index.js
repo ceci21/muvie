@@ -30,7 +30,7 @@ const ScollToTopBtn = () => {
   const className = 'scroll-to-top-btn' + ((shouldShowBtn) ? ' show' : '');
   return (
     <div className={className} onClick={onClickHandler}>
-      <i class="fas fa-arrow-up"></i>
+      <i className="fas fa-arrow-up"></i>
       <div>up to top</div>
     </div>
   );
