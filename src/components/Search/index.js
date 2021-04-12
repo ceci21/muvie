@@ -1,20 +1,15 @@
 import React, { useEffect, useRef, useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import {
-  getMoviesAsync,
-  setQuery,
-  selectQuery,
-  selectPage,
-} from '../MovieSection/moviesSlice';
+import { getMoviesAsync, setQuery } from '../../app/moviesSlice';
 import debounce from '../../lib/debounce';
 import './Search.scss';
 
 const Search = () => {
   const dispatch = useDispatch();
-  const { page, query } = useSelector(({ movies: { page, query } }) => ({
-    page,
+  const { query } = useSelector(({ movies: { query } }) => ({
     query,
   }));
+
   const onChangeHandler = useRef(
     debounce((e) => {
       const { value } = e.target;
@@ -23,12 +18,12 @@ const Search = () => {
       if (!value) {
         setQuery(value);
       }
-    }, 1000)
+    }, 800)
   );
 
   useEffect(() => {
     setTimeout(() => {
-      dispatch(getMoviesAsync({ query: 'deadpool', page: 1 }));
+      dispatch(getMoviesAsync({ page: 1 }));
     }, 500);
   }, []);
 
@@ -45,8 +40,10 @@ const Search = () => {
           <i className="fas fa-search"></i>
         </div>
       </div>
-      {query && (
-        <div className="top-msg">Searching for movies containing "{query}"</div>
+      {query ? (
+        <div className="top-msg">Searching for movies containing "{query}":</div>
+      ) : (
+        <div className="top-msg">Viewing today's popular titles:</div>
       )}
     </div>
   );

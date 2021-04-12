@@ -12,6 +12,15 @@ $icon-color: #a9abb3;
     }
   }
 
+  &.empty {
+    margin-top: 4rem;
+    img {
+      margin-bottom: $spacing-m;
+      width: 10rem;
+      filter: drop-shadow(0 0.5rem 0.5rem #470024);
+    }
+  }
+
   .results-msg {
     color: $color-salt;
     margin-bottom: $spacing-s;

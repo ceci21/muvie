@@ -3,7 +3,12 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 const getMovies = async (query, page) => {
   const key = process.env.REACT_APP_API_KEY;
-  const url = `https://api.themoviedb.org/3/search/movie?api_key=${key}&language=en-US&page=${page}&include_adult=false&query=${query}`;
+  let url;
+  if (query) {
+    url = `https://api.themoviedb.org/3/search/movie?api_key=${key}&language=en-US&page=${page}&include_adult=false&query=${query}`;
+  } else {
+    url = `https://api.themoviedb.org/3/movie/popular?api_key=${key}&language=en-US&page=${page}`;
+  }
   const results = await axios.get(url);
   return results;
 };
@@ -63,23 +68,5 @@ export const moviesSlice = createSlice({
 
 
 export const { setQuery } = moviesSlice.actions;
-
-// The function below is called a selector and allows us to select a value from
-// the state. Selectors can also be defined inline where they're used instead of
-// in the slice file. For example: `useSelector((state: RootState) => state.counter.value)`
-export const selectMovies = (state) => state.movies.results;
-export const selectQuery = (state) => state.movies.query;
-export const selectPage = (state) => state.movies.page;
-export const selectTotalPages = (state) => state.movies.totalPages;
-export const selectStatus = (state) => state.movies.status;
-
-// // We can also write thunks by hand, which may contain both sync and async logic.
-// // Here's an example of conditionally dispatching actions based on current state.
-// export const incrementIfOdd = (amount) => (dispatch, getState) => {
-//   const currentValue = selectCount(getState());
-//   if (currentValue % 2 === 1) {
-//     dispatch(incrementByAmount(amount));
-//   }
-// };
 
 export default moviesSlice.reducer;
