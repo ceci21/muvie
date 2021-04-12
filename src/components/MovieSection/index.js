@@ -8,7 +8,7 @@ import MovieCard from '../MovieCard';
 const MovieSection = () => {
   const dispatch = useDispatch();
   const { results, query, page, totalPages, status } = useSelector(
-    ({ movies: { results, query, page, totalPages, status } }) => console.log(status) || ({
+    ({ movies: { results, query, page, totalPages, status } }) => ({
       results,
       query,
       page,

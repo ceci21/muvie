@@ -2,7 +2,7 @@ import { render, fireEvent } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { store } from '../../app/store';
 
-import Search from '../Search';
+import Search from '.';
 
 const setup = () => {
   const utils = render(

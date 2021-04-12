@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 
-import ScrollToTopBtn from '../ScrollToTopBtn';
+import ScrollToTopBtn from '.';
 
 test('It should show the input entered by the user', () => {
   const { getByText } = render(<ScrollToTopBtn />);
