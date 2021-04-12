@@ -4,35 +4,37 @@ $shadow: #232324;
 $icon-color: #a9abb3;
 
 .movie-section {
-  margin: 1rem;
+  color: #fff;
+  margin: $spacing-s;
   @media only screen and (min-width: $desktop-sm-min) {
     & {
-      margin: 2rem;
+      margin: $spacing-m;
     }
   }
-  // color: black;
-  // background-color: #151618;
-  // color: #4a4a4a;
-  color: #fff;
 
   .results-msg {
     color: $color-salt;
-    margin-bottom: 1rem;
+    margin-bottom: $spacing-s;
     @media only screen and (min-width: $desktop-sm-min) {
       & {
-        margin-bottom: 2rem;
+        margin-bottom: $spacing-m;
       }
     }
+  }
+
+  .bottom-scroll-msg {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
   }
 
   .movie-cols {
     display: grid;
     grid-template-columns: 1fr;
-    grid-column-gap: 1rem;
-    grid-row-gap: 1rem;
+    grid-column-gap: $spacing-s;
+    grid-row-gap: $spacing-s;
     @media only screen and (min-width: $desktop-sm-min) {
       & {
-        gap: 2rem;
+        gap: $spacing-m;
       }
     }
     @media only screen and (min-width: $desktop-md-min) {
@@ -45,12 +47,5 @@ $icon-color: #a9abb3;
         grid-template-columns: 1fr 1fr 1fr;
       }
     }
-  }
-
-
-
-  .scroll-msg {
-    margin-top: 4rem;
-    margin-bottom: 4rem;
   }
 }

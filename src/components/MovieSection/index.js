@@ -33,8 +33,8 @@ const MovieSection = () => {
         hasMore={page < totalPages}
         scrollThreshold={'10px'}
         next={() => dispatch(getMoviesAsync({ query, page: page + 1 }))}
-        loader={<div className="scroll-msg">Loading some good flicks...</div>}
-        endMessage={<div className="scroll-msg">You reached the end!</div>}
+        loader={<div className="bottom-scroll-msg">Loading some good flicks...</div>}
+        endMessage={<div className="bottom-scroll-msg">You reached the end!</div>}
       >
         <div className="movie-cols">
           {results.map((entry, i) => (

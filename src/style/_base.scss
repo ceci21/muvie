@@ -1,12 +1,11 @@
 @import './_variables.scss';
 @import 'normalize.css';
 @import 'bulma';
-// @import 'bulma/sass/elements/button.sass';
-// @import 'bulma/sass/grid/columns.sass';
 
 :root {
   font-size: 16px;
 }
+
 html {
   background: linear-gradient(195deg, rgb(20, 20, 20), $color-shadow); // i like this
   background-size: cover;
@@ -40,11 +39,6 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
-
-button {
-  @extend .button;
-  @extend .is-primary;
 }
 
 a {

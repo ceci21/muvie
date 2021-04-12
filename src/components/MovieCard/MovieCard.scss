@@ -1,4 +1,5 @@
 @import '../../style/_variables.scss';
+
 .movie-card {
   @include box-shadow;
   display: flex;
@@ -16,8 +17,11 @@
     border-bottom-left-radius: 0.5rem;
     border-top-left-radius: 0.5rem;
 
-    img {
+    a {
       width: auto;
+      img {
+        width: auto;
+      }
     }
   }
 
@@ -30,13 +34,13 @@
     padding: $spacing-s;
     @media only screen and (min-width: $desktop-sm-min) {
       & {
-        padding: $spacing-m;
+        padding: $spacing-s;
       }
     }
 
     & > * {
       // This adds a little bit of margin for each child of .movie-details
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
     }
 
     .title {
@@ -46,7 +50,9 @@
           font-size: 1.5rem;
         }
       }
-      color: #fff;
+      a {
+        color: #fff;
+      }
     }
 
     .description {
@@ -92,9 +98,7 @@
       }
     }
 
-
-
-    .read-more-link {
+    a.read-more-link {
       display: block;
       margin-bottom: 1rem;
     }

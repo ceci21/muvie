@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import StarRating from '../StarRating';
-import getCharLen from '../../lib/getCharLen';
+import getOffset from '../../lib/getOffset';
 import { breakpoints } from '../../lib/constants';
 import './MovieCard.scss';
-
-const desktopScrn = 1024;
 
 const getImgPosterPath = (slug) =>
   slug
@@ -33,15 +31,9 @@ const MovieCard = ({ entry }) => {
   }, []);
 
   useEffect(() => {
-    let minCharLen, maxCharLen, minWidth, maxWidth;
-    const {
-      MOBILE,
-      TABLET,
-      DESKTOP_SM,
-      DESKTOP_MD,
-      DESKTOP_LG,
-      DESKTOP_XL,
-    } = breakpoints;
+    let result, minCharLen, maxCharLen, minWidth, maxWidth;
+
+    const { MOBILE, TABLET, DESKTOP_MD, DESKTOP_LG, DESKTOP_XL } = breakpoints;
 
     if (width >= TABLET && width <= DESKTOP_MD) {
       minCharLen = 30;
@@ -54,28 +46,27 @@ const MovieCard = ({ entry }) => {
       minWidth = DESKTOP_MD;
       maxWidth = DESKTOP_LG;
     } else if (width >= DESKTOP_XL) {
-      minCharLen = 60;
-      maxCharLen = 160;
-      minWidth = DESKTOP_XL;
-      maxWidth = 2000; // Since this calculation is based on a ratio, I set the max to 2000 despite screens being much larger than that
+      result = 60;
+    } else if (width <= MOBILE) {
+      result = 30;
     } else {
       minCharLen = 10;
       maxCharLen = 50;
       minWidth = 0;
       maxWidth = 480;
     }
-    const result = getCharLen(
-      width,
-      minCharLen,
-      maxCharLen,
-      minWidth,
-      maxWidth
-    );
-    setMaxCharLen(minCharLen + result);
+
+    if (!result) {
+      result =
+        minCharLen +
+        getOffset(width, minCharLen, maxCharLen, minWidth, maxWidth);
+    }
+    setMaxCharLen(result);
   }, [width]);
 
   const year = release_date ? new Date(release_date).getFullYear() : '';
-  const linkName = readMore ? 'Read Less' : 'Read More';
+  const readLink = readMore ? 'Read Less' : 'Read More';
+
   let descripClassName = 'description';
   if (overview.length > maxCharLen && readMore) {
     descripClassName += ' expanded';
@@ -93,20 +84,34 @@ const MovieCard = ({ entry }) => {
   } else {
     description = <em>No description available</em>;
   }
+
   return (
     <div className="movie-card">
       <div className="movie-img">
-        <img
-          src={getImgPosterPath(poster_path)}
-          alt={`Poster for ${original_title}`}
-          loading="lazy"
-        ></img>
+        <a
+          href={`https://www.themoviedb.org/movie/${entry.id}`}
+          alt={`${original_title} - The Movie Database`}
+        >
+          <img
+            src={getImgPosterPath(poster_path)}
+            alt={`Poster for ${original_title}`}
+            loading="lazy"
+            target="_blank"
+          ></img>
+        </a>
       </div>
       <div className="movie-details">
-        <h3 className="title"><a href={`https://www.themoviedb.org/movie/${entry.id}`}>{original_title}</a></h3>
+        <h3 className="title">
+          <a
+            href={`https://www.themoviedb.org/movie/${entry.id}`}
+            target="_blank"
+            alt={`${original_title} - The Movie Database`}
+          >
+            {original_title}
+          </a>
+        </h3>
         <div>{year}</div>
         <p className={descripClassName}>
-          {/* <div className="fade-overlay"></div> */}
           <span>{description}</span>
         </p>
         {overview.length > maxCharLen && (
@@ -115,9 +120,10 @@ const MovieCard = ({ entry }) => {
             onClick={() => {
               setReadMore(!readMore);
             }}
+            alt={'Expand'}
           >
             {' '}
-            <span>{linkName}</span>
+            <span>{readLink}</span>
           </a>
         )}
         <div className="ratings">
