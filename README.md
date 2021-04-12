@@ -8,8 +8,10 @@ Searching
 There is a `.env.fixme`. Change that to `.env` and after the `REACT_APP_API_KEY=`, insert the API key.
 
 
+lighthouse scores
 
 
+change widths, luckily api provides that
 
 
 

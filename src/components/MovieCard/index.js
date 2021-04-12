@@ -4,11 +4,6 @@ import getOffset from '../../lib/getOffset';
 import { breakpoints } from '../../lib/constants';
 import './MovieCard.scss';
 
-const getImgPosterPath = (slug) =>
-  slug
-    ? `https://image.tmdb.org/t/p/w400${slug}`
-    : `https://via.placeholder.com/300x400/000000/FFFFFF/?text=No+Poster+Image+Found`;
-
 const MovieCard = ({ entry }) => {
   const [width, setWidth] = React.useState(window.innerWidth);
   const [readMore, setReadMore] = useState(false);
@@ -25,6 +20,21 @@ const MovieCard = ({ entry }) => {
   const handleResize = () => {
     setWidth(window.innerWidth);
   };
+
+  const getImgPosterPath = (slug) => {
+    const { MOBILE } = breakpoints;
+    let url;
+    if (slug) {
+      if (width > MOBILE) {
+        url = `https://image.tmdb.org/t/p/w400${slug}`;
+      } else {
+        url = `https://image.tmdb.org/t/p/w200${slug}`;
+      }
+    } else {
+      url = `https://via.placeholder.com/300x400/000000/FFFFFF/?text=No+Poster+Image+Found`;
+    }
+    return url;
+  }
 
   useEffect(() => {
     window.addEventListener('resize', handleResize, false);
