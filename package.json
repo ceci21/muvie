@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://ceci21.github.io/muvie",
   "engines": {
-    "node": "^10.24.0"
+    "node": "<=10.24.0"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.5.1",
